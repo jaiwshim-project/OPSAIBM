@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>간단 배경 테스트</title>
+  <style>
+    /* 직접 인라인으로 배경 넣기 */
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: linear-gradient(180deg, #0a0e27 0%, #16213e 50%, #0f0f1e 100%);
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 200%;
+      height: 200%;
+      background-image:
+        radial-gradient(2px 2px at 20px 30px, white, transparent),
+        radial-gradient(2px 2px at 60px 70px, white, transparent),
+        radial-gradient(1px 1px at 50px 50px, white, transparent),
+        radial-gradient(1px 1px at 130px 80px, white, transparent),
+        radial-gradient(2px 2px at 90px 10px, white, transparent);
+      background-size: 200px 200px;
+      background-repeat: repeat;
+      opacity: 0.8;
+      z-index: -1;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      font-size: 3rem;
+      text-shadow: 0 4px 10px rgba(0,0,0,0.8);
+    }
+
+    p {
+      font-size: 1.5rem;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <h1>🌌 배경 테스트</h1>
+    <p>어두운 파란색 배경이 보이나요?</p>
+    <p>작은 흰색 별들이 보이나요?</p>
+    <p><strong>이게 보인다면 CSS는 정상 작동합니다!</strong></p>
+  </div>
+</body>
+</html>

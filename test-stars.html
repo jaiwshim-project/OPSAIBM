@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>⭐ 별 테스트</title>
+  <link rel="stylesheet" href="css/space-overlay.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      background: linear-gradient(180deg, #1e3a8a 0%, #1e40af 50%, #172554 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .test-box {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 50px;
+      border-radius: 20px;
+      text-align: center;
+      max-width: 600px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+      position: relative;
+      z-index: 100;
+    }
+
+    h1 {
+      color: #1e3a8a;
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+    }
+
+    .checklist {
+      text-align: left;
+      margin: 30px 0;
+    }
+
+    .check-item {
+      margin: 15px 0;
+      padding: 15px;
+      background: #f0f9ff;
+      border-left: 4px solid #3b82f6;
+      border-radius: 4px;
+    }
+
+    .check-item strong {
+      color: #1e40af;
+      font-size: 1.1rem;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 15px 40px;
+      background: #1e3a8a;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background: #1e40af;
+    }
+
+    .status {
+      margin-top: 20px;
+      padding: 15px;
+      background: #dcfce7;
+      border-left: 4px solid #22c55e;
+      border-radius: 4px;
+      color: #166534;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="test-box">
+    <h1>⭐ 별 효과 테스트</h1>
+
+    <div class="checklist">
+      <div class="check-item">
+        <strong>1. 배경색</strong>
+        <p>파란색 그라디언트 배경이 보이나요?</p>
+      </div>
+
+      <div class="check-item">
+        <strong>2. 별 (CSS)</strong>
+        <p>흰색 작은 별들이 흩어져 있나요?</p>
+      </div>
+
+      <div class="check-item">
+        <strong>3. 별 (Canvas)</strong>
+        <p>더 많은 별들이 캔버스에 그려져 있나요?</p>
+      </div>
+
+      <div class="check-item">
+        <strong>4. 반짝이는 별</strong>
+        <p>일부 별들이 반짝이는 애니메이션이 있나요?</p>
+      </div>
+
+      <div class="check-item">
+        <strong>5. 유성</strong>
+        <p>가끔 유성이 떨어지나요? (기다려보세요)</p>
+      </div>
+
+      <div class="check-item">
+        <strong>6. 성운</strong>
+        <p>은은한 보라/파란 빛이 천천히 움직이나요?</p>
+      </div>
+    </div>
+
+    <div class="status">
+      ✨ 개발자 도구(F12)를 열고 Console을 확인하세요!<br>
+      "✅" 표시가 있어야 정상입니다.
+    </div>
+
+    <button onclick="window.location.href='index.html'">
+      홈페이지로 이동 →
+    </button>
+  </div>
+
+  <script src="js/space-effects.js"></script>
+</body>
+</html>

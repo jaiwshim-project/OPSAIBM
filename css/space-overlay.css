@@ -1,0 +1,111 @@
+/* 우주/천체 오버레이 효과 - 파란 배경 위에 적용 */
+
+/* 별 레이어 - CSS로 직접 생성 */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    /* 큰 별들 */
+    radial-gradient(circle, white 1px, transparent 1px),
+    radial-gradient(circle, white 1px, transparent 1px),
+    radial-gradient(circle, white 0.5px, transparent 0.5px),
+    radial-gradient(circle, white 0.5px, transparent 0.5px),
+    radial-gradient(circle, white 0.5px, transparent 0.5px),
+    /* 더 작은 별들 */
+    radial-gradient(circle, rgba(255,255,255,0.8) 0.5px, transparent 0.5px),
+    radial-gradient(circle, rgba(255,255,255,0.6) 0.5px, transparent 0.5px),
+    radial-gradient(circle, rgba(255,255,255,0.7) 0.5px, transparent 0.5px);
+  background-size:
+    550px 550px,
+    350px 350px,
+    250px 250px,
+    200px 200px,
+    150px 150px,
+    100px 100px,
+    80px 80px,
+    60px 60px;
+  background-position:
+    0 0,
+    40px 60px,
+    130px 270px,
+    70px 100px,
+    150px 50px,
+    20px 150px,
+    90px 30px,
+    180px 200px;
+  opacity: 0.9;
+  animation: twinkleStars 3s ease-in-out infinite alternate;
+}
+
+@keyframes twinkleStars {
+  0% { opacity: 0.7; }
+  100% { opacity: 1; }
+}
+
+/* 유성 효과 */
+.shooting-star {
+  position: fixed;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.8);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.shooting-star::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.8), transparent);
+  transform-origin: left;
+}
+
+/* 성운 효과 */
+.nebula-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 20% 30%, rgba(138, 43, 226, 0.1), transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(30, 144, 255, 0.08), transparent 50%),
+    radial-gradient(ellipse at 50% 80%, rgba(75, 0, 130, 0.08), transparent 50%);
+  animation: nebulaMove 20s ease-in-out infinite;
+}
+
+@keyframes nebulaMove {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1) translate(0, 0);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.1) translate(20px, -20px);
+  }
+}
+
+/* 콘텐츠가 별 위에 오도록 */
+header,
+section,
+footer,
+.hero,
+.card,
+nav,
+.logo {
+  position: relative;
+  z-index: 10;
+}

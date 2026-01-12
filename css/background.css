@@ -1,0 +1,296 @@
+/* ===========================================
+   SPACE/QUANTUM BACKGROUND
+   =========================================== */
+
+/* Force dark space background on body */
+html {
+  background: #0a0e27 !important;
+}
+
+body {
+  background: linear-gradient(180deg,
+    #0a0e27 0%,
+    #16213e 25%,
+    #1a1a2e 50%,
+    #16213e 75%,
+    #0f0f1e 100%
+  ) !important;
+  background-attachment: fixed !important;
+  background-size: 100% 200vh !important;
+  min-height: 100vh;
+  position: relative;
+  color: #e0e0e0 !important;
+}
+
+/* Stars background using CSS */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background-image:
+    radial-gradient(2px 2px at 20px 30px, white, transparent),
+    radial-gradient(2px 2px at 60px 70px, white, transparent),
+    radial-gradient(1px 1px at 50px 50px, white, transparent),
+    radial-gradient(1px 1px at 130px 80px, white, transparent),
+    radial-gradient(2px 2px at 90px 10px, white, transparent),
+    radial-gradient(1px 1px at 10px 100px, white, transparent),
+    radial-gradient(1px 1px at 150px 150px, white, transparent),
+    radial-gradient(2px 2px at 200px 40px, white, transparent),
+    radial-gradient(1px 1px at 180px 120px, white, transparent),
+    radial-gradient(1px 1px at 40px 160px, white, transparent);
+  background-size: 200px 200px;
+  background-repeat: repeat;
+  opacity: 0.8;
+  z-index: -10;
+  animation: twinkle 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Nebula glow */
+body::after {
+  content: '';
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background:
+    radial-gradient(ellipse at 20% 20%, rgba(156, 39, 176, 0.15), transparent 40%),
+    radial-gradient(ellipse at 80% 40%, rgba(33, 150, 243, 0.15), transparent 40%),
+    radial-gradient(ellipse at 40% 80%, rgba(0, 188, 212, 0.12), transparent 40%);
+  z-index: -9;
+  animation: nebulaFloat 20s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+@keyframes nebulaFloat {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(30px, -30px) scale(1.1); }
+}
+
+/* Particle layer container */
+.quantum-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -5;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Individual stars */
+.star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  animation: starTwinkle 3s ease-in-out infinite;
+}
+
+.star.small {
+  width: 1px;
+  height: 1px;
+  box-shadow: 0 0 2px rgba(255, 255, 255, 0.8);
+}
+
+.star.medium {
+  width: 2px;
+  height: 2px;
+  box-shadow: 0 0 4px rgba(255, 255, 255, 0.9);
+}
+
+.star.large {
+  width: 3px;
+  height: 3px;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 1);
+}
+
+@keyframes starTwinkle {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+/* Quantum particles */
+.quantum-particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: radial-gradient(circle, rgba(100, 181, 246, 0.9), transparent 70%);
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(33, 150, 243, 0.6);
+  animation: particleFloat 12s ease-in-out infinite;
+}
+
+@keyframes particleFloat {
+  0%, 100% {
+    transform: translate(0, 0);
+    opacity: 0.4;
+  }
+  25% {
+    transform: translate(40px, -40px);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate(-20px, -80px);
+    opacity: 0.6;
+  }
+  75% {
+    transform: translate(-40px, -40px);
+    opacity: 0.7;
+  }
+}
+
+/* Nebula clouds */
+.nebula {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  animation: nebulaPulse 10s ease-in-out infinite;
+}
+
+.nebula.purple {
+  background: radial-gradient(circle, rgba(156, 39, 176, 0.3), transparent 60%);
+}
+
+.nebula.blue {
+  background: radial-gradient(circle, rgba(33, 150, 243, 0.3), transparent 60%);
+}
+
+.nebula.cyan {
+  background: radial-gradient(circle, rgba(0, 188, 212, 0.25), transparent 60%);
+}
+
+@keyframes nebulaPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.2;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.35;
+  }
+}
+
+/* ===========================================
+   CONTENT STYLING FOR READABILITY
+   =========================================== */
+
+/* Header */
+header {
+  background: rgba(10, 14, 39, 0.95) !important;
+  backdrop-filter: blur(15px) !important;
+  -webkit-backdrop-filter: blur(15px) !important;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Sections */
+section {
+  background: rgba(15, 20, 40, 0.4) !important;
+  position: relative;
+  z-index: 1;
+}
+
+section:nth-child(even) {
+  background: rgba(22, 33, 62, 0.5) !important;
+}
+
+/* Hero section */
+.hero {
+  background: linear-gradient(135deg,
+    rgba(26, 35, 126, 0.9) 0%,
+    rgba(13, 71, 161, 0.85) 50%,
+    rgba(25, 118, 210, 0.8) 100%
+  ) !important;
+  position: relative;
+}
+
+.hero h1,
+.hero h2,
+.hero p,
+.hero a {
+  color: #ffffff !important;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Cards - keep bright for readability */
+.card {
+  background: rgba(255, 255, 255, 0.98) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4) !important;
+}
+
+.card h3 {
+  color: #1a237e !important;
+}
+
+.card p,
+.card ul,
+.card li {
+  color: #424242 !important;
+}
+
+/* Section titles on dark background */
+.section-title h2 {
+  color: #ffffff !important;
+  text-shadow: 0 2px 15px rgba(0, 0, 0, 0.7);
+}
+
+.section-title p {
+  color: #b0bec5 !important;
+}
+
+/* Features */
+.feature-item h3 {
+  color: #64b5f6 !important;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.feature-item p {
+  color: #e0e0e0 !important;
+}
+
+/* Footer */
+footer {
+  background: rgba(10, 14, 30, 0.98) !important;
+  backdrop-filter: blur(15px) !important;
+  -webkit-backdrop-filter: blur(15px) !important;
+  box-shadow: 0 -2px 20px rgba(0, 0, 0, 0.5) !important;
+}
+
+footer,
+footer p,
+footer a {
+  color: #e0e0e0 !important;
+}
+
+/* Navigation links */
+nav a {
+  color: #e0e0e0 !important;
+}
+
+nav a:hover,
+nav a.active {
+  background-color: rgba(33, 150, 243, 0.8) !important;
+  color: #ffffff !important;
+}
+
+/* Buttons */
+.btn {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Logo text color fix */
+.logo p {
+  color: #b0bec5 !important;
+}

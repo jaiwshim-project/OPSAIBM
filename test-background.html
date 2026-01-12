@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🌌 배경 테스트</title>
+  <link rel="stylesheet" href="css/background.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .test-box {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 50px;
+    }
+
+    h1 {
+      font-size: 4rem;
+      color: white;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.9);
+      margin-bottom: 30px;
+      font-family: Arial, sans-serif;
+    }
+
+    p {
+      font-size: 1.5rem;
+      color: #e0e0e0;
+      margin: 15px 0;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+      font-family: Arial, sans-serif;
+    }
+
+    .status {
+      margin-top: 40px;
+      padding: 20px 40px;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 10px;
+      color: #1a237e;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="test-box">
+    <h1>🌌 우주 배경 테스트</h1>
+    <p>✨ 배경이 어두운 청색/보라색으로 보이나요?</p>
+    <p>⭐ 작은 별들이 반복 패턴으로 보이나요?</p>
+    <p>🌟 성운 같은 빛나는 효과가 보이나요?</p>
+
+    <div class="status">
+      ✅ 이 박스가 밝은 흰색 배경으로 보인다면<br>
+      배경이 정상적으로 작동하는 것입니다!
+    </div>
+  </div>
+
+  <script src="js/background.js"></script>
+
+  <script>
+    // 배경 상태 확인
+    window.addEventListener('DOMContentLoaded', () => {
+      const bodyBg = window.getComputedStyle(document.body).background;
+      console.log('Body background:', bodyBg);
+      console.log('배경이 보이지 않는다면 브라우저 캐시를 삭제하세요 (Ctrl+Shift+R)');
+    });
+  </script>
+</body>
+</html>
